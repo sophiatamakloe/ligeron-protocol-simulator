@@ -1,0 +1,35 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ligeron-protocol-simulator"
+version = "0.1.1"
+description = "A deterministic software-control simulator for a conceptual multi-phase exposure device."
+requires-python = ">=3.11"
+authors = [{name = "Sophia Tamakloe"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov>=5"]
+
+[project.scripts]
+ligeron-sim = "ligeron_protocol.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.coverage.run]
+branch = true
+source = ["ligeron_protocol"]
+
+[tool.coverage.report]
+show_missing = true
+skip_covered = false

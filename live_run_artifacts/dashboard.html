@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ligeron Protocol Simulator Results</title>
+<style>
+:root { color-scheme: dark; --bg:#08111f; --panel:#101d31; --ink:#f4f7fb; --muted:#9fb0c8; --accent:#80e6c3; --line:#263852; }
+* { box-sizing:border-box; }
+body { margin:0; font:16px/1.45 system-ui,-apple-system,sans-serif; background:var(--bg); color:var(--ink); }
+main { width:min(1100px,92vw); margin:48px auto 80px; }
+h1 { margin:0 0 8px; font-size:clamp(2rem,5vw,3.4rem); letter-spacing:-.04em; }
+.subtitle { color:var(--muted); max-width:780px; margin-bottom:32px; }
+.warning { border:1px solid #725f23; background:#241f10; padding:16px 18px; border-radius:12px; margin:24px 0 32px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; }
+.card, .panel { background:var(--panel); border:1px solid var(--line); border-radius:14px; padding:20px; }
+.label { color:var(--muted); font-size:.84rem; text-transform:uppercase; letter-spacing:.08em; }
+.value { color:var(--accent); font-size:1.75rem; font-weight:750; margin-top:7px; }
+.panels { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:24px; }
+table { width:100%; border-collapse:collapse; }
+th,td { text-align:left; padding:9px 6px; border-bottom:1px solid var(--line); }
+th { color:var(--muted); }
+details { margin-top:24px; }
+pre { overflow:auto; background:#050a12; padding:18px; border-radius:12px; color:#cde2ff; }
+@media (max-width:760px) { .panels { grid-template-columns:1fr; } }
+</style>
+</head>
+<body><main>
+<h1>Ligeron Protocol Simulator</h1>
+<p class="subtitle">Seeded run 20261005. Deterministic protocol logic with injected authentication, shutdown, transition, delivery, and emergency-stop faults.</p>
+<div class="warning"><strong>Scope boundary:</strong> These are Python software-simulation metrics. They do not establish physical-device performance, medically safe exposure settings, biological outcomes, or production capacity.</div>
+<div class="grid"><section class="card"><div class="label">Synthetic sessions</div><div class="value">10,000</div></section><section class="card"><div class="label">Completed</div><div class="value">9,221</div></section><section class="card"><div class="label">Expected faults</div><div class="value">779</div></section><section class="card"><div class="label">Faults detected</div><div class="value">779</div></section><section class="card"><div class="label">Safety violations</div><div class="value">0</div></section><section class="card"><div class="label">False aborts</div><div class="value">0</div></section><section class="card"><div class="label">p95 processing</div><div class="value">0.0449 ms</div></section><section class="card"><div class="label">Wall time</div><div class="value">0.4424 s</div></section></div>
+<div class="panels">
+<section class="panel"><h2>Injected faults</h2><table><thead><tr><th>Fault</th><th>Sessions</th></tr></thead><tbody><tr><td>authentication_failure</td><td>89</td></tr><tr><td>delivery_start_timeout</td><td>90</td></tr><tr><td>delivery_system_failure</td><td>83</td></tr><tr><td>emergency_stop_delivery</td><td>97</td></tr><tr><td>emergency_stop_rlt</td><td>97</td></tr><tr><td>emergency_stop_uvb</td><td>111</td></tr><tr><td>rlt_shutdown_failure</td><td>115</td></tr><tr><td>uvb_shutdown_failure</td><td>97</td></tr></tbody></table></section>
+<section class="panel"><h2>Abort reasons</h2><table><thead><tr><th>Reason</th><th>Sessions</th></tr></thead><tbody><tr><td>authentication_failed</td><td>89</td></tr><tr><td>delivery_start_timeout</td><td>90</td></tr><tr><td>delivery_system_failure</td><td>83</td></tr><tr><td>emergency_stop_during_delivery</td><td>97</td></tr><tr><td>emergency_stop_during_rlt</td><td>97</td></tr><tr><td>emergency_stop_during_uvb</td><td>111</td></tr><tr><td>rlt_shutdown_failure</td><td>115</td></tr><tr><td>uvb_shutdown_failure</td><td>97</td></tr></tbody></table></section>
+</div>
+<details><summary>Raw summary JSON</summary><pre>{
+  &quot;abort_reasons&quot;: {
+    &quot;authentication_failed&quot;: 89,
+    &quot;delivery_start_timeout&quot;: 90,
+    &quot;delivery_system_failure&quot;: 83,
+    &quot;emergency_stop_during_delivery&quot;: 97,
+    &quot;emergency_stop_during_rlt&quot;: 97,
+    &quot;emergency_stop_during_uvb&quot;: 111,
+    &quot;rlt_shutdown_failure&quot;: 115,
+    &quot;uvb_shutdown_failure&quot;: 97
+  },
+  &quot;aborted_sessions&quot;: 779,
+  &quot;completed_sessions&quot;: 9221,
+  &quot;completion_rate&quot;: 0.9221,
+  &quot;detected_fault_sessions&quot;: 779,
+  &quot;events_per_second&quot;: 199652.41257320117,
+  &quot;expected_fault_sessions&quot;: 779,
+  &quot;false_aborts&quot;: 0,
+  &quot;fault_detection_rate&quot;: 1.0,
+  &quot;fault_distribution&quot;: {
+    &quot;authentication_failure&quot;: 89,
+    &quot;delivery_start_timeout&quot;: 90,
+    &quot;delivery_system_failure&quot;: 83,
+    &quot;emergency_stop_delivery&quot;: 97,
+    &quot;emergency_stop_rlt&quot;: 97,
+    &quot;emergency_stop_uvb&quot;: 111,
+    &quot;rlt_shutdown_failure&quot;: 115,
+    &quot;uvb_shutdown_failure&quot;: 97
+  },
+  &quot;processing_p50_ms&quot;: 0.0196685,
+  &quot;processing_p95_ms&quot;: 0.044882,
+  &quot;processing_p99_ms&quot;: 0.306421,
+  &quot;safety_violations&quot;: 0,
+  &quot;scope_note&quot;: &quot;Metrics describe deterministic Python software simulation only; they do not measure physical hardware, clinical outcomes, or production capacity.&quot;,
+  &quot;seed&quot;: 20261005,
+  &quot;sessions_per_second&quot;: 22604.548319052712,
+  &quot;total_events&quot;: 88324,
+  &quot;total_sessions&quot;: 10000,
+  &quot;undetected_fault_sessions&quot;: 0,
+  &quot;wall_time_s&quot;: 0.4423888439996517
+}</pre></details>
+</main></body></html>

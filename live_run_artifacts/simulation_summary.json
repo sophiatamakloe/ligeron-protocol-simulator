@@ -1,0 +1,41 @@
+{
+  "abort_reasons": {
+    "authentication_failed": 89,
+    "delivery_start_timeout": 90,
+    "delivery_system_failure": 83,
+    "emergency_stop_during_delivery": 97,
+    "emergency_stop_during_rlt": 97,
+    "emergency_stop_during_uvb": 111,
+    "rlt_shutdown_failure": 115,
+    "uvb_shutdown_failure": 97
+  },
+  "aborted_sessions": 779,
+  "completed_sessions": 9221,
+  "completion_rate": 0.9221,
+  "detected_fault_sessions": 779,
+  "events_per_second": 199652.41257320117,
+  "expected_fault_sessions": 779,
+  "false_aborts": 0,
+  "fault_detection_rate": 1.0,
+  "fault_distribution": {
+    "authentication_failure": 89,
+    "delivery_start_timeout": 90,
+    "delivery_system_failure": 83,
+    "emergency_stop_delivery": 97,
+    "emergency_stop_rlt": 97,
+    "emergency_stop_uvb": 111,
+    "rlt_shutdown_failure": 115,
+    "uvb_shutdown_failure": 97
+  },
+  "processing_p50_ms": 0.0196685,
+  "processing_p95_ms": 0.044882,
+  "processing_p99_ms": 0.306421,
+  "safety_violations": 0,
+  "scope_note": "Metrics describe deterministic Python software simulation only; they do not measure physical hardware, clinical outcomes, or production capacity.",
+  "seed": 20261005,
+  "sessions_per_second": 22604.548319052712,
+  "total_events": 88324,
+  "total_sessions": 10000,
+  "undetected_fault_sessions": 0,
+  "wall_time_s": 0.4423888439996517
+}
