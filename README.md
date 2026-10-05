@@ -82,6 +82,16 @@ The reported processing latency measures how long Python takes to execute this d
 
 The 10,000-session run validates rule execution across many seeded scenarios. It is not a claim that 10,000 physical devices or users were concurrently supported.
 
+## Example runs
+
+**Session A — nominal sequence**, completing with zero safety violations:
+
+![Nominal sequence](screenshots/Screenshot%202026-10-05%20at%2012.02.33%E2%80%AFPM.png)
+
+**Session B — injected UVB shutdown failure**, correctly triggering the interlock and a safe abort:
+
+![Interlock fault detected](screenshots/Screenshot%202026-10-05%20at%2012.03.48%E2%80%AFPM.png)
+
 ## Responsible résumé framing
 
 A supportable description after reproducing the included run is:
